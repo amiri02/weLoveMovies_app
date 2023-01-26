@@ -21,7 +21,7 @@ function listIsShowing() {
             'm.rating', 
             'm.description', 
             'm.image_url')
-        .where('mt.is_showing', '=', '1')
+        .where('mt.is_showing', '=', 'true')
         .orderBy('m.movie_id');
 }
 
