@@ -4,7 +4,7 @@ const reduceProperties = require('../../utils/reduce-properties');
 
 function list() {
     return knex('movies')
-        .select('movie_id as id', 
+        .select('movie_id', 
             'title', 
             'runtime_in_minutes', 
             'rating', 
@@ -15,7 +15,7 @@ function list() {
 function listIsShowing() {
     return knex('movies as m')
         .join('movies_theaters as mt', 'm.movie_id', 'mt.movie_id')
-        .distinct('m.movie_id as id', 
+        .distinct('m.movie_id', 
             'm.title', 
             'm.runtime_in_minutes', 
             'm.rating', 
